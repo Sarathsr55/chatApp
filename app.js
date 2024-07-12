@@ -21,8 +21,12 @@ var postRouter = require('./routes/post')
 var chatRouter = require('./routes/chat')
 var messageRouter = require('./routes/message')
 
-app.set("view engine", "ejs")
-app.set("views", path.join(__dirname,"views"))
+app.use(express.static(path.join(__dirname, 'public')))
+
+// app.set("view engine", "ejs")
+app.set('views', path.join(__dirname, 'views'))
+app.engine('html', require('ejs').renderFile)
+app.set('view engine', 'html')
 app.use(express.json({limit: '50mb'}))
 app.use('*',require('./services/authentication.service').tokenVerification)
 app.use('/', indexRouter);
