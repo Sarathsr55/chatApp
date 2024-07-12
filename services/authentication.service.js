@@ -104,7 +104,7 @@ const createOTP = async (user) => {
             subject: 'OTP Verification Code',
             text: `Your d2dFix verification code is ${OTP}. Please do not share it with anybody.`
         }
-        mailTransporter.sendMail(mailDetails, function (err, data) {
+        await mailTransporter.sendMail(mailDetails, function (err, data) {
             if (err) {
                 console.log(`Error Occurs : ${err}`);
             } else {
