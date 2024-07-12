@@ -1,0 +1,31 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "^16.15.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax": "^0.0.4",
+    "axios": "^1.2.0",
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^2.2.0",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.10",
+    "express": "^4.17.3",
+    "fast-two-sms": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.9.1",
+    "node-fetch": "^3.3.0",
+    "nodemailer": "^6.7.8",
+    "sendotp": "^1.2.9",
+    "unirest": "^0.6.0"
+  }
+}
