@@ -5,6 +5,7 @@ const cors = require('cors')
 const MongoDB = require('./services/mongodb.service')
 var bodyParser = require('body-parser')
 var ejs = require('ejs')
+const path = require('path')
 
 app.use(cors({
     origin:'*'
