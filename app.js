@@ -5,7 +5,6 @@ const cors = require('cors')
 const MongoDB = require('./services/mongodb.service')
 var bodyParser = require('body-parser')
 var ejs = require('ejs')
-const path = require('path')
 
 app.use(cors({
     origin:'*'
@@ -22,12 +21,9 @@ var postRouter = require('./routes/post')
 var chatRouter = require('./routes/chat')
 var messageRouter = require('./routes/message')
 
-app.use(express.static(path.join(__dirname, 'public')))
 
-// app.set("view engine", "ejs")
-app.set('views', path.join(__dirname, 'views'))
-app.engine('html', require('ejs').renderFile)
-app.set('view engine', 'html')
+
+app.set("view engine", "ejs")
 app.use(express.json({limit: '50mb'}))
 app.use('*',require('./services/authentication.service').tokenVerification)
 app.use('/', indexRouter);
