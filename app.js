@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3000
 const cors = require('cors')
 const MongoDB = require('./services/mongodb.service')
 var bodyParser = require('body-parser')
-var ejs = require('ejs')
 
 app.use(cors({
     origin:'*'
@@ -23,7 +22,6 @@ var messageRouter = require('./routes/message')
 
 
 
-app.set("view engine", "ejs")
 app.use(express.json({limit: '50mb'}))
 app.use('*',require('./services/authentication.service').tokenVerification)
 app.use('/', indexRouter);
