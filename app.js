@@ -1,4 +1,5 @@
 const express = require('express')
+const expressLayouts = require('express-ejs-layouts');
 const app = express()
 const PORT = process.env.PORT || 3000
 const cors = require('cors')
@@ -20,7 +21,8 @@ var postRouter = require('./routes/post')
 var chatRouter = require('./routes/chat')
 var messageRouter = require('./routes/message')
 
-
+app.use(expressLayouts);
+app.set('veiw engine', 'ejs')   
 
 app.use(express.json({limit: '50mb'}))
 app.use('*',require('./services/authentication.service').tokenVerification)
